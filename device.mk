@@ -133,6 +133,44 @@ PRODUCT_PACKAGES += \
 -include $(DEVICE_PATH)/system_prop.mk
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
+
+# Public Libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    engineer_vendor_shell.sh \
+    init.oppo.face.sh \
+    init.oppo.face_calib.sh \
+    init.oppo.fingerprints.sh \
+    init.oppo.wifi.debug.sh \
+    oppo-install-recovery.sh \
+    factory_init.connectivity.rc \
+    factory_init.project.rc \
+    factory_init.rc \
+    init.ago.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6768.rc \
+    init.mt6768.usb.rc \
+    init.oppo.reserve.rc \
+    init.oppo.vendor.motor.rc \
+    init.project.rc \
+    init.sensor_1_0.rc \
+    meta_init.connectivity.rc \
+    meta_init.modem.rc \
+    meta_init.project.rc \
+    meta_init.rc \
+    multi_init.rc \
+    fstab.enableswap \
+    fstab.mt6768 \
+    ueventd.qcom.rc \
+
 # RcsService
 PRODUCT_PACKAGES += \
     RcsService
@@ -147,4 +185,5 @@ PRODUCT_PACKAGES += \
 # Wi-Fi
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
-    WifiOverlay    
+    WifiOverlay
+
